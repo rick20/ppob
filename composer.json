@@ -1,0 +1,27 @@
+{
+    "name": "rick20/ppob",
+    "description": "PPOB Multi Pulsa API PHP Library.",
+    "authors": [
+        {
+            "name": "Ricky",
+            "email": "lie.ricky@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/support": "5.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rick20\\PPOB\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rick20\\PPOB\\PPOBServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
