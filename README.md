@@ -83,5 +83,5 @@ $status = PPOB::account('account-tripay')->topup(new GenericProduct('subscriber-
 
 ## Bugs & Improvements
 
-Feel free to report me any bug you found. I would be also very happy to receive pull requests for improvements and for other internet banking provider as well.
+Feel free to report me any bug you found. I would be also very happy to receive pull requests for improvements and for other PPOB provider as well.
 If you find this package helpful, a donation would be awesome! =)
