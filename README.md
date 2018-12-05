@@ -7,6 +7,7 @@ Right now, the following providers are supported:
 - MobilePulsa ([https://mobilepulsa.com](https://mobilepulsa.com))
 - PortalPulsa ([https://portalpulsa.com](https://portalpulsa.com))
 - Tripay ([https://tripay.co.id](https://tripay.co.id))
+- IndoH2H ([https://indoh2h.com](https://indoh2h.com))
 
 
 ## Installation
@@ -33,6 +34,9 @@ PORTALPULSA_SECRET=<your-secret>
 
 TRIPAY_APIKEY=<your-apikey>
 TRIPAY_PIN=<your-pin>
+
+INDOH2H_USERNAME=<your-username>
+INDOH2H_APIKEY=<your-apikey>
 ```
 
 To add more accounts in a single provider, add those accounts in `config/ppob.php`

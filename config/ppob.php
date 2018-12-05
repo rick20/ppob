@@ -30,5 +30,10 @@ return [
             'apikey' => env('TRIPAY_APIKEY'),
             'pin' => env('TRIPAY_PIN')
         ],
+        'account-indoh2h' => [
+            'provider' => 'indo-h-2-h',
+            'username' => env('INDOH2H_USERNAME'),
+            'apikey' => env('INDOH2H_APIKEY'),
+        ],
     ]
 ];

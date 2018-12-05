@@ -34,6 +34,12 @@ class PPOBManager extends Manager
         );
     }
 
+    protected function createIndoH2HDriver(array $config)
+    {
+        return new Providers\IndoH2H(
+            $config['username'], $config['apikey']
+        );
+    }
     /**
      * Get the default driver name.
      *
