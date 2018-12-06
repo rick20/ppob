@@ -78,10 +78,14 @@ $balance = PPOB::balance();
 $status = PPOB::status('ref123');
 
 // Use another account
-$status = PPOB::account('account-portalpulsa')->topup(new TokenPLN('no-meter', 'no-hp', 100000), 'ref456');
+$status = PPOB::account('account-portalpulsa')->topup(
+  new TokenPLN('no-meter', 'no-hp', 100000), 'ref456'
+);
 
 // Purchase other products
-$status = PPOB::account('account-tripay')->topup(new GenericProduct('subscriber-id', 'no-hp', 'product-code'), 'ref789');
+$status = PPOB::account('account-tripay')->topup(
+  new GenericProduct('subscriber-id', 'no-hp', 'product-code'), 'ref789'
+);
 
 ```
 
