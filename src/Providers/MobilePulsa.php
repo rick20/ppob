@@ -107,7 +107,7 @@ class MobilePulsa extends AbstractProvider
 			'body' => json_encode($data)
 		]);
 
-		return json_decode($response->getBody()->getContents(), true);
+		return $this->buildResult($response);
 	}
 
 	protected function endpoint()

@@ -76,6 +76,6 @@ class IndoH2H extends AbstractProvider
 			])
 		]);
 
-		return $response->getBody()->getContents();
+		return $this->buildResult($response);
 	}
 }

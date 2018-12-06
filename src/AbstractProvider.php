@@ -25,4 +25,13 @@ abstract class AbstractProvider implements Provider
 
 		return $product->code();
 	}
+
+	protected function buildResult($response)
+	{
+		try {
+			return json_decode($response->getBody()->getContents(), true);
+		} catch (\Exception $error) {
+			return $response->getBody()->getContents();
+		}
+	}
 }

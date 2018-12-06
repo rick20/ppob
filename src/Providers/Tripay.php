@@ -66,6 +66,6 @@ class Tripay extends AbstractProvider
 			'form_params' => $data
 		]);
 
-		return $response->getBody()->getContents();
+		return $this->buildResult($response);
 	}
 }
