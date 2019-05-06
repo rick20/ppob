@@ -4,10 +4,20 @@ namespace Rick20\PPOB;
 
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Manager;
 
 class PPOBManager extends Manager
 {
+    protected $client;
+
+    public function __construct($app, ClientInterface $client = null)
+    {
+        parent::__construct($app);
+
+        $this->client = $client ?? $app[ClientInterface::class];
+    }
+
     public function account($name)
     {
         return $this->driver($name);
@@ -16,28 +26,28 @@ class PPOBManager extends Manager
     protected function createMobilePulsaDriver(array $config)
     {
         return new Providers\MobilePulsa(
-            $config['username'], $config['apikey'], app()->environment('production')
+            $config['username'], $config['apikey'], app()->environment('production'), $this->client
         );
     }
 
     protected function createPortalPulsaDriver(array $config)
     {
         return new Providers\PortalPulsa(
-            $config['userid'], $config['key'], $config['secret']
+            $config['userid'], $config['key'], $config['secret'], $this->client
         );
     }
 
     protected function createTripayDriver(array $config)
     {
         return new Providers\Tripay(
-            $config['apikey'], $config['pin']
+            $config['apikey'], $config['pin'], $this->client
         );
     }
 
     protected function createIndoH2HDriver(array $config)
     {
         return new Providers\IndoH2H(
-            $config['username'], $config['apikey']
+            $config['username'], $config['apikey'], $this->client
         );
     }
     /**
