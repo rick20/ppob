@@ -90,7 +90,7 @@ class MobilePulsa extends AbstractProvider
 
 	public function codeTokenPLN(TokenPLN $pln)
 	{
-		return 'pln' . $pln->nominal();
+		return 'hpln' . $pln->nominal();
 	}
 
 	protected function signRequest($command, $data = [])
