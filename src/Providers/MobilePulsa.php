@@ -64,9 +64,11 @@ class MobilePulsa extends AbstractProvider
 
 	public function balance()
 	{
-		return $this->send($this->signedBalance([
+		$response = $this->send($this->signedBalance([
 			'ref_id' => 'bl'
 		]));
+
+		return array_get($response, 'data.balance', 0);
 	}
 
 	public function status($refId)
@@ -88,7 +90,7 @@ class MobilePulsa extends AbstractProvider
 
 	public function codeTokenPLN(TokenPLN $pln)
 	{
-		return 'pln' . $pln->nominal();
+		return 'hpln' . $pln->nominal();
 	}
 
 	protected function signRequest($command, $data = [])

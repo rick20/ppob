@@ -13,7 +13,7 @@ class PPOBServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('ppob', function ($app) {
+        $this->app->singleton('ppob', function ($app) {
             return new PPOBManager($app);
         });
     }

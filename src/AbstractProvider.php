@@ -10,9 +10,16 @@ abstract class AbstractProvider implements Provider
 {
 	protected $client;
 
+	protected $response;
+
 	public function __construct(Client $client = null)
 	{
 		$this->client = $client ?: new Client();
+	}
+
+	public function getResponse()
+	{
+		return $this->response;
 	}
 
 	protected function getCode(Product $product)
@@ -29,9 +36,9 @@ abstract class AbstractProvider implements Provider
 	protected function buildResult($response)
 	{
 		try {
-			return json_decode($response->getBody()->getContents(), true);
+			return json_decode($this->response = $response->getBody()->getContents(), true);
 		} catch (\Exception $error) {
-			return $response->getBody()->getContents();
+			return $this->response = $response->getBody()->getContents();
 		}
 	}
 }
