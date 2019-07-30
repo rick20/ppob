@@ -102,12 +102,10 @@ class MobilePulsa extends AbstractProvider
 
 	protected function send($data)
 	{
-		$response = $this->client->request('POST', $this->endpoint(), [
+		return $this->client->request('POST', $this->endpoint(), [
 			'headers' => [ 'Content-Type' => 'application/json' ],
 			'body' => json_encode($data)
 		]);
-
-		return $this->buildResult($response);
 	}
 
 	protected function endpoint()
