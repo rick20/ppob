@@ -21,7 +21,7 @@ To get started with PPOB, run this command or add the package to your `composer.
 
 The PPOB package use Laravel autodiscovery so it will be loaded automatically.
 Copy the `config` file with the following command:
-`php artisan vendor:publish --vendor="Rick20\PPOB\PPOBServiceProvider"`
+`php artisan vendor:publish --provider="Rick20\PPOB\PPOBServiceProvider"`
 
 Finally add your provider's account in the `.env` file:
 ```
