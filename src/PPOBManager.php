@@ -2,6 +2,7 @@
 
 namespace Rick20\PPOB;
 
+use GuzzleHttp\Client;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use GuzzleHttp\ClientInterface;
@@ -15,7 +16,7 @@ class PPOBManager extends Manager
     {
         parent::__construct($app);
 
-        $this->client = $client ?? $app->make(ClientInterface::class);
+        $this->client = $client ?? new Client();
     }
 
     public function account($name)
