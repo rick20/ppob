@@ -15,7 +15,7 @@ class PPOBManager extends Manager
     {
         parent::__construct($app);
 
-        $this->client = $client ?? $app[ClientInterface::class];
+        $this->client = $client ?? $app->make(ClientInterface::class);
     }
 
     public function account($name)
