@@ -3,6 +3,7 @@
 namespace Rick20\PPOB;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use GuzzleHttp\ClientInterface;
@@ -105,7 +106,7 @@ class PPOBManager extends Manager
             $method = 'create'.Str::studly($config['provider']).'Driver';
 
             if (method_exists($this, $method)) {
-                return $this->$method(array_except($config, ['provider']));
+                return $this->$method(Arr::except($config, ['provider']));
             }
         }
         throw new InvalidArgumentException("Driver [$driver] not supported.");
