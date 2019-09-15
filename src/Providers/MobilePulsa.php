@@ -111,7 +111,7 @@ class MobilePulsa extends AbstractProvider
 	protected function endpoint()
 	{
 		return $this->production ? 
-			'http://api.mobilepulsa.com/receiverapi/' :
+			'https://api.mobilepulsa.net/v1/legacy/index' :
 			'https://testprepaid.mobilepulsa.net/v1/legacy/index';
 	}
 

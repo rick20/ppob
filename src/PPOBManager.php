@@ -17,7 +17,7 @@ class PPOBManager extends Manager
     {
         parent::__construct($app);
 
-        $this->client = $client ?? new Client();
+        $this->client = $client ?? $this->getDefaultClient();
     }
 
     public function account($name)
@@ -110,5 +110,14 @@ class PPOBManager extends Manager
             }
         }
         throw new InvalidArgumentException("Driver [$driver] not supported.");
+    }
+
+    protected function getDefaultClient()
+    {
+        try {
+            return app(ClientInterface::class);
+        } catch (\ReflectionException $error) {
+            return new Client();
+        }
     }
 }
