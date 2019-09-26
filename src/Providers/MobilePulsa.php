@@ -25,7 +25,7 @@ class MobilePulsa extends AbstractProvider
 			'xl' => 'xld',
 			'axis' => 'haxis',
 			'three' => 'hthree',
-			'smartfren' => 'hsmart',
+			'smart' => 'hsmart',
 		],
 		PaketData::class => [
 			'telkomsel' => 'tseldata',
