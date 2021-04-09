@@ -28,7 +28,7 @@ class PPOBManager extends Manager
     protected function createMobilePulsaDriver(array $config)
     {
         return new Providers\MobilePulsa(
-            $config['username'], $config['apikey'], app()->environment('production'), $this->client
+            $config['username'], $config['apikey'], $this->container->environment('production'), $this->client
         );
     }
 
@@ -101,7 +101,7 @@ class PPOBManager extends Manager
             return $this->callCustomCreator($driver);
         } else {
     
-            $config = $this->app['config']['ppob.accounts.' . $driver];
+            $config = $this->container['config']['ppob.accounts.' . $driver];
 
             $method = 'create'.Str::studly($config['provider']).'Driver';
 
