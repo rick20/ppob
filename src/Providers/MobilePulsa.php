@@ -33,7 +33,7 @@ class MobilePulsa extends AbstractProvider
 			'xl' => 'xldata',
 			'axis' => 'axisdata',
 			'three' => 'threedata',
-			'smartfren' => 'smartdataVOL',
+			'smart' => 'smartdataVOL',
 			'bolt' => 'hbolt',
 		]
 	];
